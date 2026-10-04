@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Admin Situs | PT Paragon Karya Perkasa Tbk</title>
+<link rel="icon" type="image/png" href="assets/pkpk-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- Login (dummy) -->
+<section class="login" id="login" aria-labelledby="login-title">
+  <form class="login__card" id="login-form">
+    <img class="login__logo" src="assets/pkpk-logo.png" alt="PT Paragon Karya Perkasa Tbk" />
+    <p class="kicker">Panel admin situs</p>
+    <h1 id="login-title">Masuk untuk mengelola konten.</h1>
+    <label class="field"><span>Email</span><input type="email" value="corsec@pkpk-tbk.co.id" autocomplete="username" required /></label>
+    <label class="field"><span>Kata sandi</span><input type="password" value="contoh-sandi" autocomplete="current-password" required /></label>
+    <button class="btn btn--primary btn--block" type="submit">Masuk</button>
+    <p class="hint">Prototipe statis. Tidak ada data yang dikirim ke server.</p>
+  </form>
+</section>
+
+<div class="app" id="app" hidden>
+  <aside class="side" aria-label="Navigasi admin">
+    <a class="side__brand" href="index.html" title="Lihat situs"><img src="assets/pkpk-logo.png" alt="PT Paragon Karya Perkasa Tbk" /></a>
+    <nav class="side__nav">
+      <a href="#dasbor" data-view="dasbor"><span>Dasbor</span></a>
+      <p class="side__group">Konten POJK 8/2015</p>
+      <a href="#dokumen" data-view="dokumen"><span>Pusat Dokumen</span><b>18</b></a>
+      <a href="#keuangan" data-view="keuangan"><span>Ikhtisar Keuangan</span><b>3</b></a>
+      <a href="#saham" data-view="saham"><span>Saham &amp; Dividen</span><b>4</b></a>
+      <a href="#rups" data-view="rups"><span>RUPS</span><b>3</b></a>
+      <a href="#manajemen" data-view="manajemen"><span>Manajemen</span><b>2</b></a>
+      <a href="#keberlanjutan" data-view="keberlanjutan"><span>Keberlanjutan</span><b>9</b></a>
+      <a href="#kontak" data-view="kontak"><span>Kontak &amp; Profesi</span><b>5</b></a>
+      <p class="side__group">Masuk</p>
+      <a href="#wbs" data-view="wbs"><span>Whistleblowing</span><b class="is-alert">2</b></a>
+    </nav>
+    <div class="side__user">
+      <span class="avatar" aria-hidden="true">FS</span>
+      <div><strong>Fransiska Setiawan</strong><small>Sekretaris Perusahaan</small></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <p class="kicker" id="crumb">Dasbor</p>
+        <p class="topbar__note">Data contoh untuk gambaran alur kerja. Angka keuangan sesuai situs draf.</p>
+      </div>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="index.html" target="_blank" rel="noopener">Lihat situs</a>
+        <button class="btn btn--ghost" type="button" id="logout">Keluar</button>
+      </div>
+    </header>
+
+    <main id="views">
+
+      <!-- DASBOR -->
+      <section class="view" id="view-dasbor" aria-labelledby="h-dasbor">
+        <div class="view__head">
+          <div><p class="kicker">Ringkasan</p><h1 id="h-dasbor">Selamat datang, Fransiska.</h1></div>
+          <p>Status kepatuhan situs terhadap POJK 8/POJK.04/2015 dan tenggat unggah berikutnya. Per 4 Oktober 2026.</p>
+        </div>
+
+        <div class="stats">
+          <article class="stat"><small>Kepatuhan POJK 8</small><strong>61%</strong><span>27 dari 44 butir terpenuhi</span></article>
+          <article class="stat"><small>Dokumen terbit</small><strong>14</strong><span>ID dan EN</span></article>
+          <article class="stat stat--warn"><small>Menunggu unggah</small><strong>18</strong><span>Ditandai "Menyusul" di situs</span></article>
+          <article class="stat stat--alert"><small>Laporan WBS baru</small><strong>2</strong><span>Belum diverifikasi</span></article>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <header class="panel__head"><h2>Kepatuhan per pasal</h2><a href="#dokumen" data-view="dokumen" class="link">Buka dokumen</a></header>
+            <ul class="bars">
+              <li><span>Pasal 2–5 · Ketentuan dasar</span><b>6/7</b><i style="--v:86%"></i></li>
+              <li><span>Pasal 7 · Informasi umum</span><b>7/10</b><i style="--v:70%"></i></li>
+              <li><span>Pasal 8 · Investor</span><b>8/11</b><i style="--v:73%"></i></li>
+              <li><span>Pasal 9 · Tata kelola</span><b>4/12</b><i style="--v:33%"></i></li>
+              <li><span>Pasal 10 · Tanggung jawab sosial</span><b>2/4</b><i style="--v:50%"></i></li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <header class="panel__head"><h2>Tenggat unggah</h2><span class="muted">30 hari ke depan</span></header>
+            <ol class="deadlines">
+              <li><time>12 Okt</time><div><strong>Posisi pemegang saham September 2026</strong><span>Saham &amp; Dividen · dari laporan BAE</span></div><span class="tag tag--warn">8 hari</span></li>
+              <li><time>31 Okt</time><div><strong>Laporan keuangan kuartal III 2026</strong><span>Pusat Dokumen · ID dan EN</span></div><span class="tag">27 hari</span></li>
+              <li><time>3 Nov</time><div><strong>Review konten kuartalan</strong><span>Profil risiko, kontak, profil manajemen</span></div><span class="tag">30 hari</span></li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <header class="panel__head"><h2>Butir yang masih "Menyusul"</h2><span class="muted">Prioritas dari gap analysis</span></header>
+            <ul class="todo">
+              <li><a href="#dokumen" data-view="dokumen">Anggaran Dasar setelah perubahan nama 2025</a><span>Pasal 7h</span></li>
+              <li><a href="#saham" data-view="saham">Skema kepemilikan sampai pemilik manfaat akhir</a><span>Pasal 7d</span></li>
+              <li><a href="#keuangan" data-view="keuangan">Ikhtisar FY2021–FY2023</a><span>Pasal 8c</span></li>
+              <li><a href="#kontak" data-view="kontak">Akuntan Publik dan alamat BAE</a><span>Pasal 7g</span></li>
+              <li><a href="#manajemen" data-view="manajemen">Anggota Komite Nominasi dan Remunerasi</a><span>Pasal 7f</span></li>
+              <li><a href="#keberlanjutan" data-view="keberlanjutan">Biaya program CSR per aspek</a><span>Pasal 10</span></li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <header class="panel__head"><h2>Aktivitas terbaru</h2></header>
+            <ol class="feed">
+              <li><time>2 Okt 2026, 16.10</time><p><strong>Fransiska Setiawan</strong> menerbitkan <em>Laporan Keuangan Konsolidasian 31 Des 2025</em> (EN).</p></li>
+              <li><time>30 Sep 2026, 09.42</time><p><strong>Sistem</strong> mencatat laporan WBS baru <em>WBS-2026-015</em>.</p></li>
+              <li><time>25 Sep 2026, 14.05</time><p><strong>Admin TI</strong> memperbarui ikhtisar keuangan FY2025.</p></li>
+              <li><time>18 Sep 2026, 11.20</time><p><strong>Fransiska Setiawan</strong> menyimpan draf <em>Keterbukaan Informasi Pengambilalihan 2026</em>.</p></li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <!-- PUSAT DOKUMEN -->
+      <section class="view" id="view-dokumen" aria-labelledby="h-dokumen" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 7h, 8, 9</p><h1 id="h-dokumen">Pusat dokumen.</h1></div>
+          <div class="view__actions"><button class="btn btn--primary" type="button" data-open="drawer-upload">Unggah dokumen</button></div>
+        </div>
+
+        <div class="filters" role="search">
+          <label class="field field--inline"><span>Cari</span><input type="search" id="doc-q" placeholder="Judul dokumen" /></label>
+          <label class="field field--inline"><span>Kategori</span>
+            <select id="doc-cat"><option value="">Semua</option><option>Laporan</option><option>Prospektus</option><option>Tata Kelola</option><option>Keterbukaan Informasi</option><option>RUPS</option></select>
+          </label>
+          <label class="field field--inline"><span>Status</span>
+            <select id="doc-status"><option value="">Semua</option><option>Terbit</option><option>Draf</option><option>Menunggu</option></select>
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="doc-table">
+            <thead><tr><th scope="col">Dokumen</th><th scope="col">Kategori</th><th scope="col">Tahun</th><th scope="col">Bahasa</th><th scope="col">Berlaku</th><th scope="col">Status</th><th scope="col"><span class="sr">Aksi</span></th></tr></thead>
+            <tbody>
+              <tr data-cat="Laporan" data-status="Terbit"><th scope="row">Laporan Keuangan Konsolidasian 31 Des 2025<small>pkpk-laporan-keuangan-2025-id.pdf · 2,7 MB</small></th><td>Laporan</td><td>2025</td><td><span class="lang on">ID</span><span class="lang on">EN</span></td><td>31 Mar 2026</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Laporan" data-status="Terbit"><th scope="row">Laporan Tahunan 2024<small>pkpk-laporan-tahunan-2024-id.pdf</small></th><td>Laporan</td><td>2024</td><td><span class="lang on">ID</span><span class="lang on">EN</span></td><td>30 Apr 2025</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Laporan" data-status="Terbit"><th scope="row">Laporan Tahunan 2023<small>pkpk-laporan-tahunan-2023-id.pdf</small></th><td>Laporan</td><td>2023</td><td><span class="lang on">ID</span><span class="lang">EN</span></td><td>30 Apr 2024</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Laporan" data-status="Menunggu"><th scope="row">Laporan Tahunan 2025<small>Belum ada berkas</small></th><td>Laporan</td><td>2025</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Laporan" data-status="Menunggu"><th scope="row">Laporan Keuangan Tengah Tahunan 2026<small>Belum ada berkas</small></th><td>Laporan</td><td>2026</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Prospektus" data-status="Terbit"><th scope="row">Prospektus PMHMETD I (lengkap dan ringkas)<small>pkpk-prospektus-pmhmetd-i-2023-id.pdf</small></th><td>Prospektus</td><td>2023</td><td><span class="lang on">ID</span><span class="lang">EN</span></td><td>2023</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Prospektus" data-status="Terbit"><th scope="row">Prospektus Penawaran Umum Perdana<small>pkpk-prospektus-ipo-2007-id.pdf</small></th><td>Prospektus</td><td>2007</td><td><span class="lang on">ID</span><span class="lang">EN</span></td><td>Jul 2007</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Menunggu"><th scope="row">Anggaran Dasar<small>Versi setelah perubahan nama 2025</small></th><td>Tata Kelola</td><td>2025</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Menunggu"><th scope="row">Pedoman Kerja Direksi dan Dewan Komisaris<small>Board Manual</small></th><td>Tata Kelola</td><td>—</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Draf"><th scope="row">Piagam Unit Audit Internal<small>pkpk-piagam-audit-internal-2023-id.pdf</small></th><td>Tata Kelola</td><td>2023</td><td><span class="lang on">ID</span><span class="lang">EN</span></td><td>2023</td><td><span class="tag">Draf</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Menunggu"><th scope="row">Piagam Komite Audit</th><td>Tata Kelola</td><td>—</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Menunggu"><th scope="row">Piagam Komite Nominasi dan Remunerasi</th><td>Tata Kelola</td><td>—</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Menunggu"><th scope="row">Kode Etik<small>Disahkan 2015</small></th><td>Tata Kelola</td><td>2015</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Tata Kelola" data-status="Menunggu"><th scope="row">Kebijakan Sistem Pelaporan Pelanggaran</th><td>Tata Kelola</td><td>—</td><td><span class="lang">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag tag--warn">Menunggu</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></td></tr>
+              <tr data-cat="Keterbukaan Informasi" data-status="Draf"><th scope="row">Pengambilalihan Perseroan oleh Resources Global Development Limited<small>Keterbukaan informasi · aksi korporasi</small></th><td>Keterbukaan Informasi</td><td>2026</td><td><span class="lang on">ID</span><span class="lang">EN</span></td><td>—</td><td><span class="tag">Draf</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="Keterbukaan Informasi" data-status="Terbit"><th scope="row">Perubahan Nama Perseroan<small>PT Perdana Karya Perkasa Tbk menjadi PT Paragon Karya Perkasa Tbk</small></th><td>Keterbukaan Informasi</td><td>2025</td><td><span class="lang on">ID</span><span class="lang on">EN</span></td><td>2025</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+              <tr data-cat="RUPS" data-status="Terbit"><th scope="row">Ringkasan Risalah RUPS Tahunan 2026</th><td>RUPS</td><td>2026</td><td><span class="lang on">ID</span><span class="lang on">EN</span></td><td>2026</td><td><span class="tag tag--ok">Terbit</span></td><td><button class="btn btn--sm" type="button" data-open="drawer-upload">Ubah</button></td></tr>
+            </tbody>
+          </table>
+          <p class="empty" id="doc-empty" hidden>Tidak ada dokumen yang cocok dengan filter.</p>
+        </div>
+      </section>
+
+      <!-- IKHTISAR KEUANGAN -->
+      <section class="view" id="view-keuangan" aria-labelledby="h-keuangan" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 8c angka 3</p><h1 id="h-keuangan">Ikhtisar keuangan lima tahun.</h1></div>
+          <div class="view__actions"><button class="btn btn--ghost" type="button" data-toast="Berkas CSV dibuat (contoh).">Unduh CSV</button><button class="btn btn--ghost" type="button" data-toast="Draf disimpan.">Simpan draf</button><button class="btn btn--primary" type="button" data-toast="Ikhtisar keuangan diterbitkan ke situs.">Terbitkan</button></div>
+        </div>
+        <p class="note">Dalam miliar rupiah kecuali dinyatakan lain. Rasio dihitung otomatis dari pos di atasnya. Kolom kosong tampil "Menyusul" di situs.</p>
+        <div class="table-wrap">
+          <table class="table table--input">
+            <thead><tr><th scope="col">Pos</th><th scope="col">FY2025</th><th scope="col">FY2024</th><th scope="col">FY2023</th><th scope="col">FY2022</th><th scope="col">FY2021</th></tr></thead>
+            <tbody>
+              <tr class="group"><th colspan="6" scope="colgroup">Laba rugi</th></tr>
+              <tr><th scope="row">Pendapatan</th><td><input aria-label="Pendapatan FY2025" value="749,4" /></td><td><input aria-label="Pendapatan FY2024" value="244,8" /></td><td><input aria-label="Pendapatan FY2023" /></td><td><input aria-label="Pendapatan FY2022" /></td><td><input aria-label="Pendapatan FY2021" /></td></tr>
+              <tr><th scope="row">Laba bruto</th><td><input aria-label="Laba bruto FY2025" value="216,3" /></td><td><input aria-label="Laba bruto FY2024" value="93,2" /></td><td><input aria-label="Laba bruto FY2023" /></td><td><input aria-label="Laba bruto FY2022" /></td><td><input aria-label="Laba bruto FY2021" /></td></tr>
+              <tr><th scope="row">Laba tahun berjalan</th><td><input aria-label="Laba tahun berjalan FY2025" value="55,7" /></td><td><input aria-label="Laba tahun berjalan FY2024" value="15,9" /></td><td><input aria-label="Laba tahun berjalan FY2023" /></td><td><input aria-label="Laba tahun berjalan FY2022" /></td><td><input aria-label="Laba tahun berjalan FY2021" /></td></tr>
+              <tr><th scope="row">Laba ke pemilik entitas induk</th><td><input aria-label="Laba ke pemilik entitas induk FY2025" value="38,6" /></td><td><input aria-label="Laba ke pemilik entitas induk FY2024" value="6,6" /></td><td><input aria-label="Laba ke pemilik entitas induk FY2023" /></td><td><input aria-label="Laba ke pemilik entitas induk FY2022" /></td><td><input aria-label="Laba ke pemilik entitas induk FY2021" /></td></tr>
+              <tr><th scope="row">Total laba komprehensif</th><td><input aria-label="Total laba komprehensif FY2025" value="55,6" /></td><td><input aria-label="Total laba komprehensif FY2024" value="16,1" /></td><td><input aria-label="Total laba komprehensif FY2023" /></td><td><input aria-label="Total laba komprehensif FY2022" /></td><td><input aria-label="Total laba komprehensif FY2021" /></td></tr>
+              <tr><th scope="row">Laba per saham (Rp penuh)</th><td><input aria-label="Laba per saham FY2025" value="32,16" /></td><td><input aria-label="Laba per saham FY2024" value="5,50" /></td><td><input aria-label="Laba per saham FY2023" /></td><td><input aria-label="Laba per saham FY2022" /></td><td><input aria-label="Laba per saham FY2021" /></td></tr>
+              <tr class="group"><th colspan="6" scope="colgroup">Posisi keuangan</th></tr>
+              <tr><th scope="row">Total aset</th><td><input aria-label="Total aset FY2025" value="627,9" /></td><td><input aria-label="Total aset FY2024" value="604,8" /></td><td><input aria-label="Total aset FY2023" /></td><td><input aria-label="Total aset FY2022" /></td><td><input aria-label="Total aset FY2021" /></td></tr>
+              <tr><th scope="row">Total liabilitas</th><td><input aria-label="Total liabilitas FY2025" value="316,2" /></td><td><input aria-label="Total liabilitas FY2024" value="348,7" /></td><td><input aria-label="Total liabilitas FY2023" /></td><td><input aria-label="Total liabilitas FY2022" /></td><td><input aria-label="Total liabilitas FY2021" /></td></tr>
+              <tr><th scope="row">Total ekuitas</th><td><input aria-label="Total ekuitas FY2025" value="311,7" /></td><td><input aria-label="Total ekuitas FY2024" value="256,2" /></td><td><input aria-label="Total ekuitas FY2023" /></td><td><input aria-label="Total ekuitas FY2022" /></td><td><input aria-label="Total ekuitas FY2021" /></td></tr>
+              <tr class="group"><th colspan="6" scope="colgroup">Rasio (otomatis)</th></tr>
+              <tr class="calc"><th scope="row">Marjin laba bruto</th><td>28,9%</td><td>38,1%</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr class="calc"><th scope="row">Marjin laba bersih</th><td>7,4%</td><td>6,5%</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr class="calc"><th scope="row">ROA</th><td>8,9%</td><td>2,6%</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr class="calc"><th scope="row">ROE</th><td>17,9%</td><td>6,2%</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr class="calc"><th scope="row">Rasio lancar</th><td>0,37x</td><td>0,50x</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr class="calc"><th scope="row">Liabilitas terhadap ekuitas</th><td>1,01x</td><td>1,36x</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr class="calc"><th scope="row">Liabilitas terhadap aset</th><td>0,50x</td><td>0,58x</td><td>—</td><td>—</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <label class="field"><span>Catatan sumber (tampil di bawah tabel)</span><input value="Sumber: Laporan Keuangan Konsolidasian per 31 Desember 2025 dan 2024 (diaudit)." /></label>
+      </section>
+
+      <!-- SAHAM -->
+      <section class="view" id="view-saham" aria-labelledby="h-saham" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 7d, 8e, 8f, 8g</p><h1 id="h-saham">Saham, kepemilikan, dan dividen.</h1></div>
+          <div class="view__actions"><button class="btn btn--primary" type="button" data-open="drawer-position">Tambah posisi bulanan</button></div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <header class="panel__head"><h2>Data saham</h2></header>
+            <div class="form-grid">
+              <label class="field"><span>Saham ditempatkan dan disetor penuh</span><input value="1.200.000.000" /></label>
+              <label class="field"><span>Modal dasar (saham)</span><input value="1.500.000.000" /></label>
+              <label class="field"><span>Nilai nominal (Rp)</span><input value="200" /></label>
+              <label class="field"><span>Biro Administrasi Efek</span><input value="PT Raya Saham Registra" /></label>
+              <label class="field field--full"><span>Obligasi dan sukuk</span><input value="Laporan keuangan 2025 tidak mencatat obligasi atau sukuk beredar." /></label>
+              <label class="field field--full"><span>Dividen (riwayat atau alasan tidak membagikan)</span><textarea rows="3" placeholder="Contoh: Perseroan belum membagikan dividen karena saldo laba masih defisit."></textarea></label>
+            </div>
+            <div class="panel__foot"><button class="btn btn--primary" type="button" data-toast="Data saham disimpan.">Simpan</button></div>
+          </article>
+
+          <article class="panel">
+            <header class="panel__head"><h2>Posisi pemegang saham bulanan</h2><span class="muted">Dari laporan BAE</span></header>
+            <ul class="rows">
+              <li><div><strong>31 Desember 2025</strong><span>5 pemegang saham · total 1.200.000.000</span></div><span class="tag tag--ok">Terbit</span></li>
+              <li><div><strong>31 Agustus 2026</strong><span>Setelah perubahan pengendali</span></div><span class="tag">Draf</span></li>
+              <li><div><strong>30 September 2026</strong><span>Tenggat 12 Okt 2026</span></div><span class="tag tag--warn">Menunggu</span></li>
+            </ul>
+            <header class="panel__head panel__head--sub"><h2>Skema kepemilikan</h2></header>
+            <div class="upload"><strong>Unggah diagram sampai pemilik manfaat akhir</strong><span>SVG atau PNG, maks. 5 MB. Diagram HTML dibuat otomatis dari tabel entitas.</span><button class="btn btn--sm" type="button" data-toast="Pilih berkas (contoh).">Pilih berkas</button></div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <header class="panel__head"><h2>Riwayat aksi atas saham</h2><button class="btn btn--sm" type="button" data-toast="Baris baru ditambahkan (contoh).">Tambah</button></header>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th scope="col">Tanggal</th><th scope="col">Jenis</th><th scope="col">Keterangan</th><th scope="col">Saham setelahnya</th></tr></thead>
+              <tbody>
+                <tr><td>2023</td><td>PMHMETD I</td><td>Penambahan modal dengan HMETD</td><td>1.200.000.000</td></tr>
+                <tr><td>Jul 2007</td><td>Penawaran umum perdana</td><td>20,83% saham ditawarkan ke publik</td><td>—</td></tr>
+                <tr><td colspan="4" class="muted">Pemecahan, penggabungan, saham bonus, perubahan nominal: belum ada data.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <!-- RUPS -->
+      <section class="view" id="view-rups" aria-labelledby="h-rups" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 8d</p><h1 id="h-rups">Rapat Umum Pemegang Saham.</h1></div>
+          <div class="view__actions"><button class="btn btn--primary" type="button" data-toast="RUPS baru dibuat (contoh).">Buat RUPS</button></div>
+        </div>
+        <p class="note">Satu kartu per rapat. Situs menampilkan dokumen sesuai urutan di bawah, dengan tautan eASY.KSEI.</p>
+        <div class="grid-2">
+          <article class="panel meeting">
+            <header class="panel__head"><div><h2>RUPS Tahunan 2026</h2><span class="muted">Tanggal rapat: diisi Sekretaris Perusahaan</span></div><span class="tag tag--ok">Selesai</span></header>
+            <ul class="checklist">
+              <li class="done"><span>Pengumuman</span><small>ID · EN</small></li>
+              <li class="done"><span>Pemanggilan</span><small>ID · EN</small></li>
+              <li><span>Bahan mata acara</span><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></li>
+              <li><span>Riwayat hidup calon</span><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></li>
+              <li class="done"><span>Ringkasan risalah</span><small>ID · EN</small></li>
+              <li><span>Tata tertib</span><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></li>
+            </ul>
+          </article>
+          <article class="panel meeting">
+            <header class="panel__head"><div><h2>RUPS Luar Biasa 2025</h2><span class="muted">Mata acara: perubahan nama Perseroan</span></div><span class="tag tag--ok">Selesai</span></header>
+            <ul class="checklist">
+              <li class="done"><span>Pengumuman</span><small>ID · EN</small></li>
+              <li class="done"><span>Pemanggilan</span><small>ID · EN</small></li>
+              <li class="done"><span>Bahan mata acara</span><small>ID</small></li>
+              <li class="na"><span>Riwayat hidup calon</span><small>Tidak ada mata acara pengangkatan</small></li>
+              <li class="done"><span>Ringkasan risalah</span><small>ID · EN</small></li>
+              <li class="done"><span>Tata tertib</span><small>ID</small></li>
+            </ul>
+          </article>
+        </div>
+        <article class="panel">
+          <header class="panel__head"><h2>Arsip risalah yang perlu dilengkapi</h2></header>
+          <ul class="rows">
+            <li><div><strong>RUPS Tahunan 2022</strong><span>Ringkasan risalah belum ada di situs</span></div><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></li>
+            <li><div><strong>RUPS Tahunan 2021</strong><span>Ringkasan risalah belum ada di situs</span></div><button class="btn btn--sm" type="button" data-open="drawer-upload">Unggah</button></li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- MANAJEMEN -->
+      <section class="view" id="view-manajemen" aria-labelledby="h-manajemen" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 7c, 7f</p><h1 id="h-manajemen">Profil manajemen.</h1></div>
+          <div class="view__actions"><button class="btn btn--primary" type="button" data-open="drawer-person">Tambah profil</button></div>
+        </div>
+        <p class="note">Kolom kelengkapan mengikuti isi wajib profil: foto, pendidikan, riwayat jabatan termasuk rangkap jabatan, dan hubungan afiliasi.</p>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th scope="col">Nama</th><th scope="col">Jabatan</th><th scope="col">Foto</th><th scope="col">Pendidikan</th><th scope="col">Riwayat &amp; rangkap</th><th scope="col">Afiliasi</th><th scope="col"><span class="sr">Aksi</span></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Suki</th><td>Presiden Komisaris</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Yeo Tze Khern</th><td>Komisaris</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="warn">Perlu konfirmasi</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Sammy Tony Saul Lalamentik</th><td>Komisaris Independen · Ketua Komite Audit</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Haryanto Sofian</th><td>Direktur Utama</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Bambang Subagio Wiyono</th><td>Direktur</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Agus Satria Utara</th><td>Direktur</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Fransiska Setiawan</th><td>Sekretaris Perusahaan</td><td class="ok">Ada</td><td class="warn">Kosong</td><td class="warn">Kosong</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Bagoes Adiyoga Koesasi</th><td>Kepala Audit Internal</td><td class="warn">Kosong</td><td class="warn">Kosong</td><td class="warn">Kosong</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Ferianto, SE, MM</th><td>Anggota Komite Audit</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row">Ari Binsar</th><td>Anggota Komite Audit</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td class="ok">Ada</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Ubah</button></td></tr>
+              <tr><th scope="row" class="muted">Belum diisi</th><td>Komite Nominasi dan Remunerasi</td><td class="warn">—</td><td class="warn">—</td><td class="warn">—</td><td class="warn">—</td><td><button class="btn btn--sm" type="button" data-open="drawer-person">Isi</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <article class="panel">
+          <header class="panel__head"><h2>Struktur organisasi</h2><span class="tag tag--warn">Menunggu</span></header>
+          <div class="upload"><strong>Unggah bagan organisasi</strong><span>Situs menampilkannya sebagai diagram berlabel, bukan gambar tanpa judul.</span><button class="btn btn--sm" type="button" data-toast="Pilih berkas (contoh).">Pilih berkas</button></div>
+        </article>
+      </section>
+
+      <!-- KEBERLANJUTAN -->
+      <section class="view" id="view-keberlanjutan" aria-labelledby="h-keberlanjutan" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 10</p><h1 id="h-keberlanjutan">Tanggung jawab sosial perusahaan.</h1></div>
+          <div class="view__actions"><button class="btn btn--primary" type="button" data-toast="Konten keberlanjutan disimpan.">Simpan semua</button></div>
+        </div>
+        <p class="note">Setiap aspek wajib memuat kebijakan, jenis program, dan biaya yang dikeluarkan. Isi dari Laporan Tahunan atau Laporan Keberlanjutan.</p>
+        <div class="aspects">
+          <article class="panel aspect">
+            <header class="panel__head"><h2><span class="num">01</span>Lingkungan hidup</h2><span class="tag tag--warn">2 kosong</span></header>
+            <label class="field"><span>Kebijakan</span><textarea rows="3" placeholder="Kebijakan lingkungan Perseroan"></textarea></label>
+            <label class="field"><span>Program</span><textarea rows="3">Reklamasi dan pascatambang; pengelolaan limbah dan air tambang.</textarea></label>
+            <div class="form-grid"><label class="field"><span>Biaya 2025 (Rp miliar)</span><input placeholder="0,0" /></label><label class="field"><span>Jaminan reklamasi (Rp miliar)</span><input value="27,2" /></label></div>
+          </article>
+          <article class="panel aspect">
+            <header class="panel__head"><h2><span class="num">02</span>K3 dan ketenagakerjaan</h2><span class="tag tag--warn">3 kosong</span></header>
+            <label class="field"><span>Kebijakan K3</span><textarea rows="3" placeholder="Kebijakan keselamatan dan kesehatan kerja"></textarea></label>
+            <div class="form-grid"><label class="field"><span>Karyawan tetap</span><input value="135" /></label><label class="field"><span>Jam kerja tanpa kecelakaan</span><input placeholder="0" /></label><label class="field"><span>Sertifikasi</span><input placeholder="Mis. SMK3" /></label><label class="field"><span>Biaya 2025 (Rp miliar)</span><input placeholder="0,0" /></label></div>
+          </article>
+          <article class="panel aspect">
+            <header class="panel__head"><h2><span class="num">03</span>Sosial kemasyarakatan</h2><span class="tag tag--warn">3 kosong</span></header>
+            <label class="field"><span>Kebijakan</span><textarea rows="3" placeholder="Kebijakan pengembangan masyarakat"></textarea></label>
+            <label class="field"><span>Program</span><textarea rows="3" placeholder="Program untuk masyarakat sekitar area operasi"></textarea></label>
+            <label class="field"><span>Biaya 2025 (Rp miliar)</span><input placeholder="0,0" /></label>
+          </article>
+          <article class="panel aspect">
+            <header class="panel__head"><h2><span class="num">04</span>Tanggung jawab layanan</h2><span class="tag tag--warn">1 kosong</span></header>
+            <label class="field"><span>Standar mutu</span><textarea rows="3" placeholder="Standar mutu kepada pembeli batubara dan mitra jasa"></textarea></label>
+            <label class="field"><span>Saluran keluhan pelanggan</span><input value="marketing@pkpk-tbk.co.id · 021-29181077" /></label>
+          </article>
+        </div>
+      </section>
+
+      <!-- KONTAK & PROFESI -->
+      <section class="view" id="view-kontak" aria-labelledby="h-kontak" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 7a, 7g</p><h1 id="h-kontak">Kontak dan profesi penunjang.</h1></div>
+          <div class="view__actions"><button class="btn btn--primary" type="button" data-toast="Kontak disimpan.">Simpan</button></div>
+        </div>
+        <div class="grid-2">
+          <article class="panel">
+            <header class="panel__head"><h2>Kontak perusahaan</h2></header>
+            <div class="form-grid">
+              <label class="field field--full"><span>Kantor pusat</span><textarea rows="2">The Bellezza Permata Hijau, Office Tower Lt. 15, 15 OF-1, Jl. Letjen Soepeno No. 34, Jakarta Selatan 12210</textarea></label>
+              <label class="field"><span>Telepon</span><input value="021-29181077" /></label>
+              <label class="field"><span>Faksimile</span><input placeholder="Belum diisi" /></label>
+              <label class="field"><span>Email bisnis</span><input value="marketing@pkpk-tbk.co.id" /></label>
+              <label class="field"><span>Email Sekretaris Perusahaan / IR</span><input placeholder="Belum diisi" /></label>
+              <label class="field field--full"><span>Lokasi operasi Kalimantan Timur</span><textarea rows="2" placeholder="Alamat lengkap lokasi operasi"></textarea></label>
+              <label class="field field--full"><span>Titik peta (lintang, bujur)</span><input placeholder="-0,5, 117,1" /></label>
+            </div>
+          </article>
+          <article class="panel">
+            <header class="panel__head"><h2>Profesi penunjang pasar modal</h2></header>
+            <div class="form-grid">
+              <label class="field field--full"><span>Biro Administrasi Efek</span><input value="PT Raya Saham Registra" /></label>
+              <label class="field field--full"><span>Alamat BAE</span><input placeholder="Belum diisi" /></label>
+              <label class="field field--full"><span>Akuntan Publik tahun berjalan</span><input placeholder="Nama KAP dari laporan auditor 2025" /></label>
+              <label class="field field--full"><span>Alamat KAP</span><input placeholder="Belum diisi" /></label>
+              <label class="field field--full"><span>Notaris</span><input placeholder="Belum diisi" /></label>
+              <label class="field field--full"><span>Pemeringkat Efek dan Wali Amanat</span><input value="Tidak ada efek utang beredar" /></label>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHISTLEBLOWING -->
+      <section class="view" id="view-wbs" aria-labelledby="h-wbs" hidden>
+        <div class="view__head">
+          <div><p class="kicker">Pasal 9i</p><h1 id="h-wbs">Laporan pelanggaran.</h1></div>
+          <p>Identitas pelapor tidak ditampilkan. Hanya pengelola WBS dan Komite Audit yang dapat membuka modul ini.</p>
+        </div>
+        <div class="wbs">
+          <ul class="tickets" role="list">
+            <li><button type="button" class="ticket is-active" data-ticket="0"><strong>WBS-2026-015</strong><span>Dugaan benturan kepentingan pengadaan</span><span class="tag tag--alert">Baru</span></button></li>
+            <li><button type="button" class="ticket" data-ticket="1"><strong>WBS-2026-014</strong><span>Pelanggaran prosedur K3 kontraktor</span><span class="tag tag--alert">Baru</span></button></li>
+            <li><button type="button" class="ticket" data-ticket="2"><strong>WBS-2026-011</strong><span>Penggunaan aset perusahaan</span><span class="tag tag--warn">Investigasi</span></button></li>
+            <li><button type="button" class="ticket" data-ticket="3"><strong>WBS-2026-007</strong><span>Gratifikasi dari pemasok</span><span class="tag tag--ok">Selesai</span></button></li>
+          </ul>
+          <article class="panel ticket-detail" aria-live="polite">
+            <header class="panel__head"><div><h2 id="t-id">WBS-2026-015</h2><span class="muted" id="t-date">Diterima 30 Sep 2026 · melalui formulir anonim</span></div><span class="tag tag--alert" id="t-status">Baru</span></header>
+            <p id="t-body">Pelapor menyampaikan dugaan bahwa pemenang tender sewa alat berat memiliki hubungan keluarga dengan pejabat pengadaan. Pelapor melampirkan dua dokumen pendukung.</p>
+            <ol class="steps">
+              <li class="is-done">Laporan diterima</li>
+              <li>Verifikasi awal</li>
+              <li>Investigasi</li>
+              <li>Tindak lanjut</li>
+            </ol>
+            <div class="form-grid">
+              <label class="field"><span>Status</span><select id="t-select"><option>Baru</option><option>Verifikasi awal</option><option>Investigasi</option><option>Selesai</option></select></label>
+              <label class="field"><span>Ditangani oleh</span><select><option>Unit Audit Internal</option><option>Komite Audit</option></select></label>
+              <label class="field field--full"><span>Pesan ke pelapor (melalui nomor tiket)</span><textarea rows="3" placeholder="Pelapor membaca pesan ini dengan memasukkan nomor tiket."></textarea></label>
+            </div>
+            <div class="panel__foot"><button class="btn btn--primary" type="button" data-toast="Status laporan diperbarui.">Perbarui</button></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- Drawer: unggah dokumen -->
+<div class="drawer" id="drawer-upload" role="dialog" aria-modal="true" aria-labelledby="du-title" hidden>
+  <form class="drawer__panel">
+    <header class="drawer__head"><h2 id="du-title">Unggah dokumen</h2><button class="btn btn--sm btn--ghost" type="button" data-close>Tutup</button></header>
+    <label class="field"><span>Judul (ID)</span><input placeholder="Laporan Keuangan Kuartal III 2026" required /></label>
+    <label class="field"><span>Judul (EN)</span><input placeholder="Q3 2026 Financial Statements" required /></label>
+    <div class="form-grid">
+      <label class="field"><span>Kategori</span><select><option>Laporan</option><option>Prospektus</option><option>Tata Kelola</option><option>Keterbukaan Informasi</option><option>RUPS</option></select></label>
+      <label class="field"><span>Tahun</span><input value="2026" inputmode="numeric" /></label>
+      <label class="field"><span>Berlaku sejak</span><input type="date" /></label>
+      <label class="field"><span>Dasar POJK</span><select><option>Pasal 8c</option><option>Pasal 8b</option><option>Pasal 7h</option><option>Pasal 9</option><option>Pasal 8d</option><option>Pasal 8i–8j</option></select></label>
+    </div>
+    <label class="field"><span>Berkas bahasa Indonesia (PDF)</span><input type="file" accept="application/pdf" /></label>
+    <label class="field"><span>Berkas bahasa Inggris (PDF)</span><input type="file" accept="application/pdf" /></label>
+    <p class="hint">Nama berkas dibuat otomatis, misalnya pkpk-laporan-keuangan-q3-2026-id.pdf.</p>
+    <footer class="drawer__foot"><button class="btn btn--ghost" type="button" data-close data-toast="Disimpan sebagai draf.">Simpan draf</button><button class="btn btn--primary" type="submit">Terbitkan</button></footer>
+  </form>
+</div>
+
+<!-- Drawer: posisi pemegang saham -->
+<div class="drawer" id="drawer-position" role="dialog" aria-modal="true" aria-labelledby="dp-title" hidden>
+  <form class="drawer__panel">
+    <header class="drawer__head"><h2 id="dp-title">Posisi pemegang saham</h2><button class="btn btn--sm btn--ghost" type="button" data-close>Tutup</button></header>
+    <label class="field"><span>Posisi per tanggal</span><input type="date" value="2026-09-30" /></label>
+    <div class="table-wrap">
+      <table class="table table--input">
+        <thead><tr><th scope="col">Pemegang saham</th><th scope="col">Saham</th><th scope="col">%</th></tr></thead>
+        <tbody>
+          <tr><td><input aria-label="Nama pemegang saham 1" value="Resources Global Development Limited" /></td><td><input aria-label="Jumlah saham 1" value="612.000.000" /></td><td>51,00</td></tr>
+          <tr><td><input aria-label="Nama pemegang saham 2" value="PT Deli Pratama Nusantara" /></td><td><input aria-label="Jumlah saham 2" value="288.000.000" /></td><td>24,00</td></tr>
+          <tr><td><input aria-label="Nama pemegang saham 3" value="Masyarakat" /></td><td><input aria-label="Jumlah saham 3" value="300.000.000" /></td><td>25,00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Angka contoh. Isi dari laporan bulanan Biro Administrasi Efek.</p>
+    <label class="field"><span>Laporan BAE (PDF)</span><input type="file" accept="application/pdf" /></label>
+    <footer class="drawer__foot"><button class="btn btn--ghost" type="button" data-close>Batal</button><button class="btn btn--primary" type="submit">Terbitkan</button></footer>
+  </form>
+</div>
+
+<!-- Drawer: profil -->
+<div class="drawer" id="drawer-person" role="dialog" aria-modal="true" aria-labelledby="dpe-title" hidden>
+  <form class="drawer__panel">
+    <header class="drawer__head"><h2 id="dpe-title">Ubah profil</h2><button class="btn btn--sm btn--ghost" type="button" data-close>Tutup</button></header>
+    <div class="form-grid">
+      <label class="field"><span>Nama</span><input value="Yeo Tze Khern" /></label>
+      <label class="field"><span>Jabatan</span><select><option>Komisaris</option><option>Presiden Komisaris</option><option>Komisaris Independen</option><option>Direktur Utama</option><option>Direktur</option><option>Sekretaris Perusahaan</option><option>Kepala Audit Internal</option><option>Anggota Komite</option></select></label>
+      <label class="field"><span>Menjabat sejak</span><input type="date" /></label>
+      <label class="field check"><input type="checkbox" /><span>Tandai sebagai independen</span></label>
+    </div>
+    <label class="field"><span>Foto</span><input type="file" accept="image/*" /></label>
+    <label class="field"><span>Pendidikan (ID)</span><textarea rows="2"></textarea></label>
+    <label class="field"><span>Riwayat jabatan, termasuk rangkap jabatan (ID)</span><textarea rows="3">Chief Financial Officer, Resources Global Development Limited.</textarea></label>
+    <label class="field"><span>Hubungan afiliasi (ID)</span><textarea rows="2" placeholder="Wajib diisi. Konfirmasi ulang: juga menjabat CFO pemegang 51% saham."></textarea></label>
+    <p class="hint">Versi bahasa Inggris diisi di tab EN setelah disimpan.</p>
+    <footer class="drawer__foot"><button class="btn btn--ghost" type="button" data-close>Batal</button><button class="btn btn--primary" type="submit">Simpan</button></footer>
+  </form>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const app = $('#app'), login = $('#login');
+
+function toast(msg) {
+  const t = $('#toast');
+  t.textContent = msg; t.hidden = false;
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => { t.hidden = true; }, 2600);
+}
+
+function show(view) {
+  if (!$('#view-' + view)) view = 'dasbor';
+  $$('.view').forEach(v => { v.hidden = v.id !== 'view-' + view; });
+  $$('.side__nav a').forEach(a => a.classList.toggle('is-active', a.dataset.view === view));
+  $('#crumb').textContent = $('.side__nav a[data-view="' + view + '"] span').textContent;
+  window.scrollTo(0, 0);
+}
+
+function enter() { login.hidden = true; app.hidden = false; show(location.hash.slice(1)); }
+$('#login-form').addEventListener('submit', e => { e.preventDefault(); sessionStorage.setItem('pkpk-admin', '1'); enter(); });
+$('#logout').addEventListener('click', () => { sessionStorage.removeItem('pkpk-admin'); app.hidden = true; login.hidden = false; });
+try { if (sessionStorage.getItem('pkpk-admin')) enter(); } catch (e) {}
+addEventListener('hashchange', () => { if (!app.hidden) show(location.hash.slice(1)); });
+
+// Drawers
+let opener = null;
+document.addEventListener('click', e => {
+  const open = e.target.closest('[data-open]');
+  if (open) { opener = open; const d = $('#' + open.dataset.open); d.hidden = false; $('input, select, textarea', d).focus(); }
+  const close = e.target.closest('[data-close]') || (e.target.classList.contains('drawer') && e.target);
+  if (close) { close.closest('.drawer').hidden = true; opener && opener.focus(); }
+  const t = e.target.closest('[data-toast]');
+  if (t) toast(t.dataset.toast);
+});
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const d = $$('.drawer').find(d => !d.hidden);
+  if (d) { d.hidden = true; opener && opener.focus(); }
+});
+$$('.drawer form').forEach(f => f.addEventListener('submit', e => {
+  e.preventDefault(); f.closest('.drawer').hidden = true; toast('Tersimpan dan diterbitkan (contoh).');
+}));
+
+// Document filter
+function filterDocs() {
+  const q = $('#doc-q').value.toLowerCase(), c = $('#doc-cat').value, s = $('#doc-status').value;
+  let n = 0;
+  $$('#doc-table tbody tr').forEach(r => {
+    const ok = r.textContent.toLowerCase().includes(q) && (!c || r.dataset.cat === c) && (!s || r.dataset.status === s);
+    r.hidden = !ok; n += ok;
+  });
+  $('#doc-empty').hidden = n > 0;
+}
+['#doc-q', '#doc-cat', '#doc-status'].forEach(s => $(s).addEventListener('input', filterDocs));
+
+// WBS tickets
+const tickets = [
+  ['WBS-2026-015', 'Diterima 30 Sep 2026 · melalui formulir anonim', 'Baru', 'alert', 1, 'Pelapor menyampaikan dugaan bahwa pemenang tender sewa alat berat memiliki hubungan keluarga dengan pejabat pengadaan. Pelapor melampirkan dua dokumen pendukung.'],
+  ['WBS-2026-014', 'Diterima 27 Sep 2026 · melalui email WBS', 'Baru', 'alert', 1, 'Kontraktor di area stockpile dilaporkan tidak memakai APD lengkap saat pemuatan malam hari.'],
+  ['WBS-2026-011', 'Diterima 2 Sep 2026 · melalui formulir anonim', 'Investigasi', 'warn', 3, 'Dugaan penggunaan kendaraan operasional untuk keperluan pribadi di luar jam kerja.'],
+  ['WBS-2026-007', 'Diterima 14 Jul 2026 · melalui formulir anonim', 'Selesai', 'ok', 4, 'Dugaan pemberian hadiah dari pemasok suku cadang. Investigasi selesai, sanksi tercatat, pelapor telah diberi tahu.']
+];
+$$('.ticket').forEach(b => b.addEventListener('click', () => {
+  const [id, date, st, tone, step, body] = tickets[b.dataset.ticket];
+  $$('.ticket').forEach(x => x.classList.toggle('is-active', x === b));
+  $('#t-id').textContent = id; $('#t-date').textContent = date; $('#t-body').textContent = body;
+  $('#t-select').value = st;
+  $('#t-status').textContent = st; $('#t-status').className = 'tag tag--' + tone;
+  $$('.steps li').forEach((li, i) => li.classList.toggle('is-done', i < step));
+}));
+</script>
+</body>
+</html>
